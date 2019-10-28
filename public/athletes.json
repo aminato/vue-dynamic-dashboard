@@ -1,0 +1,12 @@
+[
+    {
+        "name": "John Stockton",
+        "sport": "basket",
+        "country": "USA"
+    },
+    {
+        "name": "Usain Bolt",
+        "sport": "athletics",
+        "country": "Jamaica"
+    }
+]

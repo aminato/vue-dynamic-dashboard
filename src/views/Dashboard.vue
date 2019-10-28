@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="overview-list p-5 bg-gray-100 rounded-sm"
+    <div class="overview-list p-5"
          style="--square: 300px">
 
       <div v-for="field in view"
@@ -11,14 +11,13 @@
                    class="my-auto self-center"
                    :value="state[field.field]"
                    :args="state" />
-       
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 const required = require.context("../components/widgets", false, /\.vue$/);
 export default {
   name: "Dashboard",
@@ -31,20 +30,41 @@ export default {
         componentConfig.default || componentConfig;
     });
   },
-  data(){
+  data() {
     return {
-      view:[
-          {
-            field:"Test",
-            view:"timer"
-          }
-        ],
-        state:{
-          Test:45
+      view: [
+        {
+          field: "Test",
+          view: "timer"
+        },
+        {
+          field: "Test2",
+          view: "raw"
+        },
+        {
+          field: "Test3",
+          view: "raw"
+        },
+        {
+          field: "Medals",
+          view: "trophies"
         }
-    }
+      ],
+      state: {
+        Test: 45,
+        Test2: 55,
+        Test3: "Testone",
+        Medals: [
+          "1998 - mvp",
+          "1997 - mvp",
+          "1995 - mvp",
+          "1999 - defensive player of the year",
+          "1997 - defensive player of the year"
+        ]
+      }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
