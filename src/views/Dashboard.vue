@@ -1,16 +1,17 @@
 <template>
   <div class="">
     <div class="overview-list p-5"
-         style="--square: 300px">
+         style="--square: 300px"
+         v-if="stats">
 
-      <div v-for="field in view"
-           :key="field.field"
+      <div v-for="card in view"
+           :key="card.field"
            class="shadow bg-white rounded-sm flex flex-col p-6 pb-10">
-        <h4 class="text-xs uppercase font-bold tracking-wide text-85 pb-8">{{field.field}}</h4>
-        <component :is="`widget-${field.view}`"
+        <h4 class="text-xs uppercase font-bold tracking-wide text-85 pb-8">{{card.field}}</h4>
+        <component :is="`widget-${card.view}`"
                    class="my-auto self-center"
-                   :value="state[field.field]"
-                   :args="state" />
+                   :value="stats[card.field]"
+                   :args="stats" />
 
       </div>
     </div>
@@ -30,38 +31,64 @@ export default {
         componentConfig.default || componentConfig;
     });
   },
+  created() {
+    fetch(`/athletes/${this.$route.params.id}.json`)
+      .then(res => res.json())
+      .then(stats => (this.stats = stats));
+  },
   data() {
     return {
+      stats: null,
       view: [
         {
-          field: "Test",
+          field: "name",
+          view: "raw"
+        },
+        {
+          field: "sport",
+          view: "raw"
+        },
+        {
+          field: "country",
+          view: "raw"
+        },
+        {
+          field: "assistsPerGame",
+          view: "raw"
+        },
+        {
+          field: "assists",
+          view: "raw"
+        },
+        {
+          field: "steals",
+          view: "raw"
+        },
+        {
+          field: "points",
+          view: "raw"
+        },
+        {
+          field: "rebounds",
+          view: "raw"
+        },
+        {
+          field: "team",
+          view: "raw"
+        },
+        {
+          field: "teamLogo",
+          view: "img"
+        },
+        {
+          field: "playedAvg",
           view: "timer"
         },
         {
-          field: "Test2",
+          field: "FG",
           view: "raw"
-        },
-        {
-          field: "Test3",
-          view: "raw"
-        },
-        {
-          field: "Medals",
-          view: "trophies"
         }
-      ],
-      state: {
-        Test: 45,
-        Test2: 55,
-        Test3: "Testone",
-        Medals: [
-          "1998 - mvp",
-          "1997 - mvp",
-          "1995 - mvp",
-          "1999 - defensive player of the year",
-          "1997 - defensive player of the year"
-        ]
-      }
+      ]
     };
   }
 };
