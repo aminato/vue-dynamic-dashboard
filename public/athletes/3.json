@@ -1,0 +1,14 @@
+{
+    "name": "michael jordan",
+    "sport": "basket",
+    "country": "USA",
+    "assistsPerGame": 5.3,
+    "assists": 5633,
+    "steals": 2514,
+    "points": 32292,
+    "rebounds": 6672,
+    "team": "Chicago Bulls",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/6/67/Chicago_Bulls_logo.svg",
+    "playedAvg": 2328,
+    "FG": 49.7
+}

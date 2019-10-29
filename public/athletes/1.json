@@ -1,0 +1,14 @@
+{
+    "name": "John Stockton",
+    "sport": "basket",
+    "country": "USA",
+    "assistsPerGame": 10.5,
+    "assists": 15806,
+    "steals": 3265,
+    "points": 19711,
+    "rebounds": 4051,
+    "team": "Utah Jazz",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/0/04/Utah_Jazz_logo_%282016%29.svg",
+    "playedAvg": 1908,
+    "FG": 51.5
+}
