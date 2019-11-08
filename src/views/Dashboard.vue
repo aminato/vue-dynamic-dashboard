@@ -36,59 +36,81 @@ export default {
       .then(res => res.json())
       .then(stats => (this.stats = stats));
   },
+  computed: {
+    view() {
+      if (!this.stats) return [];
+      return this.views[this.stats.sport];
+    }
+  },
   data() {
     return {
       stats: null,
-      view: [
-        {
-          field: "name",
-          view: "raw"
-        },
-        {
-          field: "sport",
-          view: "raw"
-        },
-        {
-          field: "country",
-          view: "raw"
-        },
-        {
-          field: "assistsPerGame",
-          view: "raw"
-        },
-        {
-          field: "assists",
-          view: "raw"
-        },
-        {
-          field: "steals",
-          view: "raw"
-        },
-        {
-          field: "points",
-          view: "raw"
-        },
-        {
-          field: "rebounds",
-          view: "raw"
-        },
-        {
-          field: "team",
-          view: "raw"
-        },
-        {
-          field: "teamLogo",
-          view: "img"
-        },
-        {
-          field: "playedAvg",
-          view: "timer"
-        },
-        {
-          field: "FG",
-          view: "raw"
-        }
-      ]
+      views: {
+        basket: [
+          {
+            field: "name",
+            view: "raw"
+          },
+          {
+            field: "sport",
+            view: "raw"
+          },
+          {
+            field: "country",
+            view: "raw"
+          },
+          {
+            field: "assistsPerGame",
+            view: "raw"
+          },
+          {
+            field: "assists",
+            view: "raw"
+          },
+          {
+            field: "steals",
+            view: "raw"
+          },
+          {
+            field: "points",
+            view: "raw"
+          },
+          {
+            field: "rebounds",
+            view: "raw"
+          },
+          {
+            field: "team",
+            view: "raw"
+          },
+          {
+            field: "teamLogo",
+            view: "img"
+          },
+          {
+            field: "playedAvg",
+            view: "timer"
+          },
+          {
+            field: "FG",
+            view: "raw"
+          }
+        ],
+        athletics: [
+          {
+            field: "name",
+            view: "raw"
+          },
+          {
+            field: "sport",
+            view: "raw"
+          },
+          {
+            field: "country",
+            view: "raw"
+          }
+        ]
+      }
     };
   }
 };
