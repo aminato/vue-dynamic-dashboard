@@ -124,8 +124,8 @@ export default {
             view: "raw"
           },
           {
-            field: "assistsPerGame",
-            view: "raw"
+            field: "games",
+            view: "rows"
           },
           {
             field: "assists",

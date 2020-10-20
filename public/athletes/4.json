@@ -2,9 +2,9 @@
     "name": "Lionel Messi",
     "sport": "soccer",
     "country": "Argentina",
-    "assistsPerGame": 0.4,
-    "assists": 1500,
-    "goals": 513,
+    "games": 869,
+    "assists": 298,
+    "goals": 704,
     "team": "Barcelona",
     "teamLogo": "https://upload.wikimedia.org/wikipedia/it/0/07/Fc_barcelona.png"
 }
