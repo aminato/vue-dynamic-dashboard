@@ -1,26 +1,24 @@
 <template>
   <div>
     <ul class="overflow-y-auto">
-      <li v-for="athlete in athletes"
-          :key="athlete.id"
-          class="mb-6 p-6 shadow-md rounded-sm bg-white">
-        <div>
+      <li
+        v-for="athlete in athletes"
+        :key="athlete.id"
+        class="mb-6 p-6 shadow-md rounded-sm bg-white transform transition-transform scale-95 duration-300 hover:scale-100 hover:-translate-y-1"
+      >
+        <router-link :to="`athlete/${athlete.id}`">
           <p>
-            {{athlete.name}}
+            {{ athlete.name }}
           </p>
           <p>
-            {{athlete.country}}
+            {{ athlete.country }}
           </p>
-        </div>
-        <div class="flex justify-between">
-          <p>
-            {{athlete.sport}}
-          </p>
-          <router-link :to="`athlete/${athlete.id}`"
-                       class="text-xs uppercase">show more</router-link>
-        </div>
-      </li>
 
+          <p>
+            {{ athlete.sport }}
+          </p>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -30,13 +28,13 @@ export default {
   name: "home",
   data() {
     return {
-      athletes: []
+      athletes: [],
     };
   },
   created() {
     fetch("/athletes.json")
-      .then(res => res.json())
-      .then(athletes => (this.athletes = athletes));
-  }
+      .then((res) => res.json())
+      .then((athletes) => (this.athletes = athletes));
+  },
 };
 </script>
