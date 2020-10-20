@@ -109,7 +109,41 @@ export default {
             field: "country",
             view: "raw"
           }
-        ]
+        ],
+         soccer: [
+          {
+            field: "name",
+            view: "raw"
+          },
+          {
+            field: "sport",
+            view: "raw"
+          },
+          {
+            field: "country",
+            view: "raw"
+          },
+          {
+            field: "assistsPerGame",
+            view: "raw"
+          },
+          {
+            field: "assists",
+            view: "raw"
+          },
+          {
+            field: "goals",
+            view: "raw"
+          },
+          {
+            field: "team",
+            view: "raw"
+          },
+          {
+            field: "teamLogo",
+            view: "img"
+          },
+        ],
       }
     };
   }
